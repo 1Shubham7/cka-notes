@@ -13,6 +13,27 @@
 - Install only the libraries and tools needed for the application to run.
 - Avoid installing unnecessary debugging tools in production images.
 
+### Creating multi node cluster with kind:
+
+we can use this command to create cluster with kind:
+
+but it is a single node cluster with worker and control plan in same node, for multi node cluster, go to kind docs and search "multi":
+
+```yml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+```
+
+------------------------------------------
+
+**You will get access to kubernetes.io/docs and /blogs for CKA**
+
+- To get the apiVersion, `kubectl explain pod`
+
 
 ## Imp Questions
 
