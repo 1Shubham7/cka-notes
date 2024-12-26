@@ -34,6 +34,10 @@ nodes:
 
 - To get the apiVersion, `kubectl explain pod`
 
+## For troubleshooting:
+
+1. `kubectl describe pod [NAME]`
+2. `kubectl edit pod [NAME]`
 
 ## Imp Questions
 
