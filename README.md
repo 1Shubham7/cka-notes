@@ -34,7 +34,7 @@ nodes:
 
 - To get the apiVersion, `kubectl explain pod`
 - IMP: to get the yaml file:
-` kubectl run nginx --image=nginx --dry-run client -o yaml`
+` kubectl run nginx --image=nginx --dry-run client -o yaml > pod.yaml`
 
 ## For troubleshooting:
 
