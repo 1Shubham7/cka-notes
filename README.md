@@ -44,6 +44,10 @@ nodes:
 
   This is the best 
 
+***--dry-run=client*** is the keyword here, don't forget that
+
+
+
 ## For troubleshooting:
 
 1. you can get details about k8s objects using - `kubectl describe pod [NAME]`
