@@ -80,6 +80,10 @@ Then you can also roll back this:
 2.  then in the file add `alias 'k=kubectl'`
 3.  `source .bash_profile`
 
+Also in exam, for alias and autocompleting tags, just go to cheetsheet and the first topic is that only.
+
+for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't set alias like `alias g='get'`, only stuff like `alias kg=kubectl get`
+
 ## Miscellenaous 
 
 - Assign the change cause "Pick up patch version" to the revision.
