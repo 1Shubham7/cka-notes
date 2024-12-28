@@ -70,6 +70,12 @@ Then you can also check out rollout history:
 Then you can also roll back this:
 ` kubectl rollout undo deploy [NAME]`
 
+## Miscellenaous 
+
+- Assign the change cause "Pick up patch version" to the revision.
+
+`kubectl annotate deployment <deployment-name> kubernetes.io/change-cause="Pick up patch version"`
+
 ## Imp Questions
 
 1. for python app we need a python runtime, but for go app we dont need a go runtime why?
