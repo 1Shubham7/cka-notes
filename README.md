@@ -74,6 +74,12 @@ Then you can also check out rollout history:
 Then you can also roll back this:
 ` kubectl rollout undo deploy [NAME]`
 
+## Setting Alias
+
+1.  `vim .bash_profile`
+2.  then in the file add `alias 'k=kubectl'`
+3.  `source .bash_profile`
+
 ## Miscellenaous 
 
 - Assign the change cause "Pick up patch version" to the revision.
