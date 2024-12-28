@@ -40,8 +40,7 @@ nodes:
   `kubectl run deployment nginx-depl --image=nginx --dry-run=client -o yaml > depl.yaml`
   OR create gives better than run:
 
-  `kubectl create deployment deployment/nginx-depl --image=nginx --dry-run=client -o yaml`
-  // but with create we don't just say deployment name, we say deployment/[NAME]
+  `kubectl create deployment nginx-depl --image=nginx --dry-run=client -o yaml`
 
   This is the best 
 
