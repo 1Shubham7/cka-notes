@@ -34,7 +34,16 @@ nodes:
 
 - To get the apiVersion, `kubectl explain pod`
 - IMP: to get the yaml file:
-` kubectl run nginx --image=nginx --dry-run client -o yaml > pod.yaml`
+  `kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml`
+
+  // for pod we don't say pod but for deployment we also say deployment:
+  `kubectl run deployment nginx-depl --image=nginx --dry-run=client -o yaml > depl.yaml`
+  OR create gives better than run:
+
+  `kubectl create deployment deployment/nginx-depl --image=nginx --dry-run=client -o yaml`
+  // but with create we don't just say deployment name, we say deployment/[NAME]
+
+  This is the best 
 
 ## For troubleshooting:
 
@@ -57,7 +66,10 @@ e.g. : `kubectl scale --help`
 `kubectl set image deploy nginx-depl nginx-container=nginx:1.9.1`
 
 Then you can also check out rollout history:
-`kubectl rollout history deploy nginx-depl`
+`kubectl rollout history deploy [NAME]`
+
+Then you can also roll back this:
+` kubectl rollout undo deploy [NAME]`
 
 ## Imp Questions
 
