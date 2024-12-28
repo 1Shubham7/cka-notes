@@ -38,8 +38,14 @@ nodes:
 
 ## For troubleshooting:
 
-1. `kubectl describe pod [NAME]`
-2. `kubectl edit pod [NAME]`
+1. you can get details about k8s objects using - `kubectl describe pod [NAME]`
+2. you can bacially edit the k8s objects using -  `kubectl edit pod [NAME]`
+
+## Scaling ReplicaSets:
+
+1. rewrite the yaml file
+2. edit using `kubectl edit`
+3. imperetive way - `kubectl scale --replicas=10 rs/nginx-rs`
 
 ## Imp Questions
 
