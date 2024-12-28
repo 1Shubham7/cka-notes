@@ -47,6 +47,18 @@ nodes:
 2. edit using `kubectl edit`
 3. imperetive way - `kubectl scale --replicas=10 rs/nginx-rs`
 
+### if you don't remember anything, use --help
+
+e.g. : `kubectl scale --help`
+
+### Change image in deployment
+
+`kubectl set image deploy [DEPLOYMENT NAME] [CONTAINER NAME]=[NEW IMAGE]`
+`kubectl set image deploy nginx-depl nginx-container=nginx:1.9.1`
+
+Then you can also check out rollout history:
+`kubectl rollout history deploy nginx-depl`
+
 ## Imp Questions
 
 1. for python app we need a python runtime, but for go app we dont need a go runtime why?
