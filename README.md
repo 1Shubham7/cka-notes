@@ -96,7 +96,7 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 - You can also create service in declarative way:
  
-`kubectl expose deploy [DEPLOYMENT_NAME] --port=80 --target-port=8000`
+`kubectl expose deploy [DEPLOYMENT_NAME] --port=80 --target-port=8000` (find this on the cheatsheet if you face difficulties)
 
 ## Imp Questions
 
