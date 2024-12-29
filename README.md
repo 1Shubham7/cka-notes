@@ -84,11 +84,19 @@ Also in exam, for alias and autocompleting tags, just go to cheetsheet and the f
 
 for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't set alias like `alias g='get'`, only stuff like `alias kg=kubectl get`
 
+## Tips:
+
+1. Metadata.Name should not have capital letters, so loadBalancer -> load-balancer
+
 ## Miscellenaous 
 
 - Assign the change cause "Pick up patch version" to the revision.
 
 `kubectl annotate deployment <deployment-name> kubernetes.io/change-cause="Pick up patch version"`
+
+- You can also create service in declarative way:
+ 
+`kubectl expose deploy [DEPLOYMENT_NAME] --port=80 --target-port=8000`
 
 ## Imp Questions
 
