@@ -103,3 +103,7 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 1. for python app we need a python runtime, but for go app we dont need a go runtime why?
 2. Why multi stage builds?
 3. what are distroless images
+
+## Tasks before the exam:
+
+1. ***Make sure to watch day 10 video 20:00 onwards to know about fully qualified domain name***
