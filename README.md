@@ -59,6 +59,17 @@ nodes:
 2. edit using `kubectl edit`
 3. imperetive way - `kubectl scale --replicas=10 rs/nginx-rs`
 
+## Getting inside pods and containers:
+
+- to get inside a pod:
+`kubectl exec -it multi-container-pod -- sh`
+
+- to get inside a specific pod of a container use -c:
+`kubectl exec -it multi-container-pod -c my-app -- sh`
+
+- To prite environment variables of a pod: after the -- there is a command, so it could also be a command like printenv"
+`kubectl exec -it multi-container-pod -- printenv`
+
 ### if you don't remember anything, use --help
 
 e.g. : `kubectl scale --help`
