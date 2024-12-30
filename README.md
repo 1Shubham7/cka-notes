@@ -105,9 +105,12 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 `kubectl annotate deployment <deployment-name> kubernetes.io/change-cause="Pick up patch version"`
 
-- You can also create service in declarative way:
+- Create service in declarative way:
  
 `kubectl expose deploy [DEPLOYMENT_NAME] --port=80 --target-port=8000` (find this on the cheatsheet if you face difficulties)
+
+- `-A` is for all namespaces:
+`kubectl get pods -A` will give pods of all ns. 
 
 ## Imp Questions
 
