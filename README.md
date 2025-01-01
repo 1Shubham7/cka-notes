@@ -46,8 +46,6 @@ nodes:
 
 ***--dry-run=client*** is the keyword here, don't forget that
 
-
-
 ## For troubleshooting:
 
 1. you can get details about k8s objects using - `kubectl describe pod [NAME]`
@@ -110,7 +108,11 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 `kubectl expose deploy [DEPLOYMENT_NAME] --port=80 --target-port=8000` (find this on the cheatsheet if you face difficulties)
 
 - `-A` is for all namespaces:
-`kubectl get pods -A` will give pods of all ns. 
+`kubectl get pods -A` will give pods of all ns.
+
+- use `| grep` for searching:
+
+`kubectl get pods | grep my-app` will give all pods that has my-app in it. 
 
 ## Imp Questions
 
