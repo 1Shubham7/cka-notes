@@ -36,10 +36,12 @@ nodes:
 - IMP: to get the yaml file:
   `kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml`
 
-  // for pod we don't say pod but for deployment we also say deployment:
-  `kubectl run deployment nginx-depl --image=nginx --dry-run=client -o yaml > depl.yaml`
-  OR create gives better than run:
+  // for pod we can use "run" only, but for deployment we can use "run" or "create":
 
+  `kubectl run pod --image=nginx --dry-run=client -o yaml > pod.yaml`
+  
+  `kubectl run deployment nginx-depl --image=nginx --dry-run=client -o yaml > depl.yaml`
+  
   `kubectl create deployment nginx-depl --image=nginx --dry-run=client -o yaml`
 
   This is the best 
