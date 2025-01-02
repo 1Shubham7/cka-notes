@@ -116,6 +116,10 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 `kubectl get pods | grep my-app` will give all pods that has my-app in it. 
 
+- use `--selector` to filter by labels:
+
+`kubectl get pods --selector env=demo`
+
 ## Imp Questions
 
 1. for python app we need a python runtime, but for go app we dont need a go runtime why?
