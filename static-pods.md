@@ -1,4 +1,4 @@
-using `nodeName: cka-cluster-3-worker` we do not need the scheduler to schdule our pods, we define the node on our own:
+***Manual Scheduling:*** using `nodeName: cka-cluster-3-worker` we do not need the scheduler to schdule our pods, we define the node on our own:
 
 ```yaml
 apiVersion: v1
