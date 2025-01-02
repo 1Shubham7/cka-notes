@@ -21,5 +21,6 @@ status: {}
 
 All the control plane components like scheduler, api-server etc. are actually manifests present in `etc/kubernetes/manifests/` of our control plane. they are static pods. now locally this control plane 
 is a docker container so we do:
-`docker exec -it cka-cluster-3-control-plane bash` to get into control plane and then `etc/kubernetes/manifests/` but for cka, you will have to do ssh into the control plane which will be a 
-virtual machine. to troubleshoot any issue with the control plane components go there.
+`docker exec -it cka-cluster-3-control-plane bash` to get into control plane and then `etc/kubernetes/manifests/` but for cka, you will have to do ssh into the control plane which will be a virtual machine. chatGPT says you can ssh into it using:
+
+`ssh <username>@<control-plane-IP>` command or `ssh -i key.pem <username>@<control-plane-IP>` if key file is provided. to troubleshoot any issue with the control plane components go there.
