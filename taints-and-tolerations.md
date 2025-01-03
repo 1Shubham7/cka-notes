@@ -18,3 +18,27 @@ To add taints:
 To remove taint, just add '-':
 
 `kubectl taint node worker gpu=true:NoSchedule-`
+
+Adding taints to pods, you can simply search that in k8s docs:
+
+```yamlapiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations:
+  - key: "gpu"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
+status: {}
+```
