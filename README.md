@@ -129,3 +129,13 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 ## Tasks before the exam:
 
 1. ***Make sure to watch day 10 video 20:00 onwards to know about fully qualified domain name***
+
+
+
+
+
+
+
+## Assignments:
+
+[X] Day 14
