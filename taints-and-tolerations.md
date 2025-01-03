@@ -71,4 +71,8 @@ to add labels to nodes or even pods :
 
 `kubectl label node cka-cluster-3-worker gpu=false`
 
+to remove:
+
+`kubectl label node cka-cluster-3-worker gpu-`
+
 For these yaml go to docs and find them at the last moment and cram that journey or carm these systaxes itself if you can't find docs, if you forget, check docs because you may get confused about nodeSelector or Taints syntax which is confusing. But for nodeSelec
