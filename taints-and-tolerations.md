@@ -42,3 +42,33 @@ spec:
     effect: "NoSchedule"
 status: {}
 ```
+
+#### Selectors
+
+With taints and tolerations, nodes were deciding which pod to choose, with `nodeSelector` the pods decide which node to choose:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx-two
+  name: nginx-two
+spec:
+  containers:
+  - image: nginx
+    name: nginx-two
+    resources: {}
+  dnsPolicy: ClusterFirst
+  nodeSelector:
+    gpu: "false"
+  restartPolicy: Always
+status: {}
+```
+
+to add labels to nodes or even pods :
+
+`kubectl label node cka-cluster-3-worker gpu=false`
+
+For these yaml go to docs and find them at the last moment and cram that journey or carm these systaxes itself if you can't find docs, if you forget, check docs because you may get confused about nodeSelector or Taints syntax which is confusing. But for nodeSelec
