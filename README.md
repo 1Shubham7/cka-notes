@@ -138,4 +138,4 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 ## Assignments:
 
-[X] Day 14
+- [x] Day 14
