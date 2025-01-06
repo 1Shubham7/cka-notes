@@ -14,3 +14,7 @@ The liveness probe can use one of three mechanisms:
 - HTTP GET: Sends an HTTP GET request to a specified path in the container.
 - TCP Socket: Attempts to open a TCP connection on a specified port.
 - Exec Command: Runs a specific command inside the container to check its health.
+
+#### 2. Readiness Probe
+
+for e.g. if you container takes 10 sec to start, then till that 10 secs users would get 404 error, readiness probe ensures that the container will be able to accept request only after the readiness probe is passed (and it won't probe container unless it is started). If the readiness probe fails, the container is marked as not ready, and Kubernetes removes it from the list of endpoints of the Service (Pod will no longer receive traffic routed through the Service).
