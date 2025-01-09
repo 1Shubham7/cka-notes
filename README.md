@@ -1,4 +1,4 @@
-# cka-notes
+# CheatSheet
 
 ![340174607-b1bfe6ae-a1e6-4b04-8486-272d3ed380bc](https://github.com/user-attachments/assets/fa9c49d6-181f-48ad-ba2b-031f605feb82)
 
@@ -130,7 +130,7 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 1. ***Make sure to watch day 10 video 20:00 onwards to know about fully qualified domain name***
 
-// Aotuscaling, HPA, VPA all this is very imp but not coming in cka so do study that later :)
+// Autoscaling, HPA, VPA all this is very imp but not coming in cka so do study that later :)
 
 
 
