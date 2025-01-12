@@ -27,6 +27,6 @@ Kubernetes runs the startup probe on a container until it succeeds or its failur
 
 >> Why not just use Readiness probe?
 
-With a startup probe, liveness and readiness probes are disabled until the startup probe succeeds. This prevents Kubernetes from prematurely marking the container as unhealthy or routing traffic to it. With only a readiness probe, Kubernetes may attempt to route traffic to the container once it starts, even if it’s not fully initialized, leading to errors or degraded performance.
+With a startup probe, liveness and readiness probes are disabled until the startup probe succeeds. This prevents Kubernetes from prematurely marking the container as unhealthy or routing traffic to it. With only a readiness probe, Kubernetes may attempt to route traffic to the container once it starts, even if it’s not fully initialized, leading to errors or degraded performance. startup probe ensures that the container is started and initialized while readiness probe ensures that its just ready even if not initialized.
 
-startup probe ensures that the container is started and initialized while readiness probe ensures that its just ready even if not initialized?
+in CKA, get the syntax from docs.
