@@ -16,3 +16,9 @@ To explain in detail:
 **Public Key:** tells who you are
 **Private Key:** proves who you are + decryption
 
+- all the certificates in K8s are stored at `/etc/kubernetes/pki`
+
+In Kubernetes, communication between these components also encrypted via CA certificates:
+
+![image](https://github.com/user-attachments/assets/5cd1213a-7286-40f9-b0d8-3f628d915ff3)
+
