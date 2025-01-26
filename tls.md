@@ -10,3 +10,9 @@ To explain in detail:
 
 3. Initiate the TLS Handshake
 ![image](https://github.com/user-attachments/assets/c6f70f31-01fe-4ef0-afd7-dfab5b06d7c6)
+
+4. Communication is encrypted, now you can send HTTP req.
+
+**Public Key:** tells who you are
+**Private Key:** proves who you are + decryption
+
