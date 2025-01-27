@@ -54,6 +54,11 @@ In Kubernetes, communication between these components also encrypted via CA cert
 **Public Key:** tells who you are
 **Private Key:** proves who you are + decryption
 
+- if the key has the term "key" in it, it is a private key, else it is a public key:
+
+![image](https://github.com/user-attachments/assets/5d21220d-9550-4102-a3c6-976a975eb7a7)
+
+
 - all the certificates in K8s are stored at `/etc/kubernetes/pki`
 
 
