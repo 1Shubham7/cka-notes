@@ -41,12 +41,20 @@ the handshake is complete and all further communication between the client and s
 
 6. Communication is encrypted, now you can send HTTP req.
 
+## In K8s
+
+In K8s the api server will become both a client and a server:
+
+![image](https://github.com/user-attachments/assets/b72acf84-c977-46ec-be61-d1787dfffb1e)
+
+In Kubernetes, communication between these components also encrypted via CA certificates:
+
+![image](https://github.com/user-attachments/assets/5cd1213a-7286-40f9-b0d8-3f628d915ff3)
+
 **Public Key:** tells who you are
 **Private Key:** proves who you are + decryption
 
 - all the certificates in K8s are stored at `/etc/kubernetes/pki`
 
-In Kubernetes, communication between these components also encrypted via CA certificates:
 
-![image](https://github.com/user-attachments/assets/5cd1213a-7286-40f9-b0d8-3f628d915ff3)
 
