@@ -120,6 +120,8 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 `kubectl get pods --selector env=demo`
 
+to rename as well as to move file - `mv`
+
 ## Imp Questions
 
 1. for python app we need a python runtime, but for go app we dont need a go runtime why?
