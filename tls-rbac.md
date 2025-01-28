@@ -60,7 +60,7 @@ In Kubernetes, communication between these components also encrypted via CA cert
 
 - all the certificates in K8s are stored at `/etc/kubernetes/pki`
 
-To create certificate for a user, go to kubernetes docs, type sertificate and go to third link (Certificates and Certificate Signing Requests | Kubernetes) and search "How to issue a certificate for a user".
+To create certificate for a user, go to kubernetes docs, type certificate and go to link (Certificates and Certificate Signing Requests | Kubernetes) and search "How to issue a certificate for a user".
 
 Step 1. consider we are a user called dolly, dolly want to get access as a cluster admin, so he will create a private key:
 `openssl genrsa -out shubham.key 2048`
@@ -95,5 +95,17 @@ This was the authentication part, now the authorization part:
 >> if they ask you to count the number of roles or anything else: `k get roles -A --no-headers | wc -l`
 - wc stands for word count. `wc -l` Counts the number of lines in the input.
 
-Step 4.
+Step 4. now add Shubham user in your kubeconfig (Shubham will do this):
 
+```
+k config  set-credentials Shubham \
+> --client-certificate=shubham.csr \
+> --client-key=shubham.key \
+> --embed-certs=true
+```
+
+--embed-certs=true is used because:
+The actual contents of the client certificate and key files are embedded directly into the kubeconfig file. otherwise The kubeconfig file will only contain references (paths) to the shubham.csr and shubham.key files.
+
+Step 5. make switch to Shubham user
+` k config set-context Shubham --cluster=cluster-3 --user=Shubham`
