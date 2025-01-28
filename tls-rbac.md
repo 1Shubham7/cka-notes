@@ -93,6 +93,7 @@ This was the authentication part, now the authorization part:
 ` k auth can-i get pods`
 
 >> if they ask you to count the number of roles or anything else: `k get roles -A --no-headers | wc -l`
+- wc stands for word count. `wc -l` Counts the number of lines in the input.
 
 Step 4.
 
