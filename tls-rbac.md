@@ -92,5 +92,7 @@ This was the authentication part, now the authorization part:
 ` k auth whoami`
 ` k auth can-i get pods`
 
+>> if they ask you to count the number of roles or anything else: `k get roles -A --no-headers | wc -l`
+
 Step 4.
 
