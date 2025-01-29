@@ -1,0 +1,5 @@
+CNI enables communication between pods in different nodes and network policies allows us to restrict unnecessary connection between pods. for e.g. we would not want frontend to access the db pod.
+
+CNI like kindnet does not have network policy, so we use CNI like calico or cilium. now how to check connection between pods: just exec into frontend pod and do `curl backend` backend is name of backend
+service.
+
