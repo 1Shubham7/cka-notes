@@ -62,28 +62,6 @@ In Kubernetes, communication between these components also encrypted via CA cert
 
 To create certificate for a user, go to kubernetes docs, type certificate and go to link (Certificates and Certificate Signing Requests | Kubernetes) and search "How to issue a certificate for a user".
 
-Step 1. consider we are a user called dolly, dolly want to get access as a cluster admin, so he will create a private key:
-`openssl genrsa -out shubham.key 2048`
-
-and then use this to create a CSR:
-`openssl req -new -key shubham.key -out shubham.csr -subj "/CN=shubham"`
-
-Step 2. Now, we as cluster admin will now ask for his CSR only, and then create a csr.yaml, in that csr.yaml in request field we will use base64 encoded version of his CSR:
-`cat shubham.csr | base64 | tr -d "\n"`  (it command base64 encodes the file and removes spaces to give a single string)
-
-Step 3. just create a kubernetes CSR by `kubectl apply -f csr.yaml`, now we have a CSR in our cluster. this CSR is authorized by a public CA authority, since we are using this for a internal server and not a website as such, our CA is on control plane.
-
-you can approve the CSR by `k certificate approve Shubham`. if we have the required role to approve, the CSR will be approved. now share that CSR with dolly:
-
-`k get csr Shubham -o yaml > issuecert.yaml`
-
-in  this issuecert, you will find certificate field, simply decode it:
-
-```sh
- echo "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5ekNDQWQrZ0F3SUJBZ0lRSFhENk9JSWZwZHROV284T0t0NXBYREFOQmdrcWhraUc5dzBCQVFzRkFEQVYKTVJNd0VRWURWUVFERXdwcmRXSmxjbTVsZEdWek1CNFhEVEkxTURFeU56QTRNRFl5T1ZvWERUSTFNREV5T0RBNApNRFl5T1Zvd0VqRVFNQTRHQTFVRUF4TUhjMmgxWW1oaGJUQ0NBU0l3RFFZSktvWklodmNOQVFFQkJRQURnZ0VQCkFEQ0NBUW9DZ2dFQkFPc1QyMElEaTJBYmEwc3orZHFwUXJjb0pxZEdJdzZzN01IUW5VcklsemNCZkZmSmI0a0wKazh1dk1KaHUzYjdvOS9uWkFYNXJiUnhZNTN5bmZzaXI4amk5Y3dBZHF6M2VHU2Z3eVlLT0pFd3cwaDFLcXJ1cwoxQXJUeThORTI4bDdpYVBIYkRzOWlsa01mMEgxN0VsSHJtUGIrZnRkODhLbCt3aXNqd3l2YmFjdGlpZEF0RnhNCnMwbEsxbGNWZjFkcDUvSHZRNnFCTmdKa0xDbGcxMkFHRnpWNi9STHMzMEU1dWFaQ1lqQUZJci82RDNNRTNmT0MKMTFXTGVEUDBvdi9RSDdkWlAyR240aFNZVGJUSlJMcTRHSHFqeFkyY0JLQWNIa1VmNlBFdnhlNWJzaFNwS3VNTgpIUDJHUWEramp6bnp2SFc1Q005L2hOUXVrTEVLZnBMd1Q0c0NBd0VBQWFOR01FUXdFd1lEVlIwbEJBd3dDZ1lJCkt3WUJCUVVIQXdJd0RBWURWUjBUQVFIL0JBSXdBREFmQmdOVkhTTUVHREFXZ0JSUzkyWjVRSUcvblp3ZHp6NXgKdDZrOTlpcDZVakFOQmdrcWhraUc5dzBCQVFzRkFBT0NBUUVBazZPeFN0b3hGaE8yeDBwZWdiZnZEVGZxeU03Nwp3bUVobllLREhtQkp4TE9jbUN3blplLytLSzRkSUpHemxSamVibGFCT1ZLUy93YzY2WWV3S1k1VzRXRVkvblNQCkU3dkRhTW1ONjhTdUJ5eGZVeVk3SUYzNzRRSTFBTXJ0dCtjMjVtT0tkTmdjbG50Y0ZyNzBxM1M0a1o3NC9XRmcKTWxDUUdaalhpN1dEYlAzM1FoU1pMLzE3Y2JaRkRBUEUzL3U0ZDluZ1IwdlRNemoxVlhwYTVGSlF0bXAzeEVTaApOY1cvUHltRFVlSVFiL3RBREFCL2VwVEQxYjJMd2ZIeEpjbTBqZHJVYkh4TUdaVmZFa3ZFTnd4Tm1JZ0wyWHNTCmk1dkdCckxsTVBNSW9XcUF5T2MzU3p4d1UySHkyZ0E4REFLdzJkL2h6OGxzL1pybkFmemdjK1IxNHc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==" | base64 -d
-```
-
-// You can find the kubeconfig file is `.kube` folder in home dir.
 
 ![image](https://github.com/user-attachments/assets/fd390f7a-2abf-4312-9689-a7f51e4cd5a6)
 
@@ -95,11 +73,9 @@ This was the authentication part, now the authorization part:
 >> if they ask you to count the number of roles or anything else: `k get roles -A --no-headers | wc -l`
 - wc stands for word count. `wc -l` Counts the number of lines in the input.
 
-Step 4. now add Shubham user in your kubeconfig (Shubham will do this):
-
 ```
 k config  set-credentials Shubham \
-> --client-certificate=shubham.csr \
+> --client-certificate=shubham.crt \
 > --client-key=shubham.key \
 > --embed-certs=true
 ```
@@ -107,5 +83,4 @@ k config  set-credentials Shubham \
 --embed-certs=true is used because:
 The actual contents of the client certificate and key files are embedded directly into the kubeconfig file. otherwise The kubeconfig file will only contain references (paths) to the shubham.csr and shubham.key files.
 
-Step 5. make switch to Shubham user
-` k config set-context Shubham --cluster=cluster-3 --user=Shubham`
+// Roles and RoleBindings are namespace scoped so if question needs cluster scoped, use cluster Role and cluster Binding.
