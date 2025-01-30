@@ -122,6 +122,11 @@ for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't 
 
 to rename as well as to move file - `mv`
 
+
+> when you follow the tutorial on how to create a multi node k8s cluster, if you use gcp in step 8, you have to make a change for GCP but not AWS
+`sudo kubeadm init --pod-network-cidr=192.168.0.0/16  --node-name master`
+
+
 ## Imp Questions
 
 1. for python app we need a python runtime, but for go app we dont need a go runtime why?
