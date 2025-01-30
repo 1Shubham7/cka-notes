@@ -124,7 +124,8 @@ to rename as well as to move file - `mv`
 
 
 > when you follow the tutorial on how to create a multi node k8s cluster, if you use gcp in step 8, you have to make a change for GCP but not AWS
-`sudo kubeadm init --pod-network-cidr=192.168.0.0/16  --node-name master`
+`sudo kubeadm init --pod-network-cidr=192.168.0.0/16  --node-name master`.
+> also here is all you need to create a multi node k8s cluster (self managed): day 27 + https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-public-cloud/gce
 
 
 ## Imp Questions
