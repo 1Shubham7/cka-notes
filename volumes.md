@@ -17,3 +17,7 @@ spec:
   - name: redis-storage
     emptyDir: {}
 ```
+
+how will you add text to a file without vim : `echo "asdfasdf" > a.txt`
+how to check the processes running: `apt-get update && apt-get install procps -y` and then do `ps aux`. a means all users, u means user fiendly output, x means show process not attached to terminal.
+
