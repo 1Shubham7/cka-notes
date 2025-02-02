@@ -53,3 +53,4 @@ If you have two pods and two services and we try doing `k exec -it nginx -- curl
 - So coreDNS is present as a deployment in the cluster and it also need a service called kube-dns.
 - imp files inside pod for coredns are `etc/resolv.conf` and `etc/hosts` (know about them in whatsapp video).
 - Also coreDNS might fail if you don't have a CNI.
+- if this comes in cka, then first search "Debugging DNS Resolution" in kubernetes docs, that will help.
