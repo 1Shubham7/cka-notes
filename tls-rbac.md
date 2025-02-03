@@ -1,4 +1,4 @@
-Firstly, how the website and server communicate:
+dFirstly, how the website and server communicate:
 
 ![image](https://github.com/user-attachments/assets/efa1526a-ea74-4ff8-a2af-d3798e2496a8)
 
@@ -84,3 +84,10 @@ k config  set-credentials Shubham \
 The actual contents of the client certificate and key files are embedded directly into the kubeconfig file. otherwise The kubeconfig file will only contain references (paths) to the shubham.csr and shubham.key files.
 
 // Roles and RoleBindings are namespace scoped so if question needs cluster scoped, use cluster Role and cluster Binding.
+
+For service accounts this file is very important: `/var/run/secrets/kubernetes.io/serviceaccount/` because it contains:
+- ca.crt: The CA certificate for the Kubernetes API server.
+- token: The token (JWT) used for authenticating the Pod with the Kubernetes API.
+- namespace: The namespace in which the Pod is running.
+
+(more about this in the video)
