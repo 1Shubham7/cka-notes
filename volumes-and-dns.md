@@ -46,6 +46,9 @@ spec:
 
 - to kill a process just do `kill [PROCESS ID]`. if you want to force kill: `kill -9 [PROCESS ID]`
 
+![image](https://github.com/user-attachments/assets/491e63b0-9526-4a2d-957b-7c6f2a829c5a)
+
+
 ## CoreDNS
 
 If you have two pods and two services and we try doing `k exec -it nginx -- curl nginx2` it should work. but if this gives error and this command - `k exec -it nginx -- curl [IP]` works fine, that means there is some issue with your coreDNS, you check if the pods of coreDNS are 0, if yes, scale the deployment.
