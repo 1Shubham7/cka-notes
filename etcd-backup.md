@@ -22,3 +22,25 @@ Step 3. now restore using etcdutil command, it will be installed in cka, but I a
 `sudo ETCDCTL_API=3 etcdctl --data-dir=/var/lib/etcd-restore snapshot restore /opt/etcd-backup.db`
 
 remember we are saving the restore in `/var/lib/etcd-restore`
+
+Step 4. now vim into the ectd.yaml and change one argument and one volument mount path (remember this yo uwill not find this in docs):
+
+```
+--data-dir=/var/lib/etcd-restore
+.
+.
+.
+volumeMounts:
+    - mountPath: /var/lib/etcd-restore
+```
+
+Step 5. Now we just have to restart api server components :
+
+`mv * /tmp`  ...
+
+and then also restart these:
+
+`systemctl restart kubelet`
+`systemctl daemon-reload`
+
+Step 6. wait for some time, and once the services are up and running, check the etcd configuration and see if the data-dir and volume mount is changed.
