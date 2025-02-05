@@ -32,7 +32,13 @@ Step 4. now vim into the ectd.yaml and change one argument and one volument moun
 .
 volumeMounts:
     - mountPath: /var/lib/etcd-restore
+.
+.
+.
+volumeMounts:
+    - mountPath: /var/lib/etcd-restore
 ```
+(there are two volumemounts that we need to change)
 
 Step 5. Now we just have to restart api server components :
 
