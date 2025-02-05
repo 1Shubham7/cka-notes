@@ -4,4 +4,7 @@
 
 - number of pods with selector env=dev:
 
-`k get pod --selector env=dev | wc -l`
+`k get pod --selector env=dev | wc -l` but this will also count the header, so subtract 1, otherwise:
+
+`k get pod --selector env=dev --no-headers | wc -l`
+
