@@ -121,3 +121,5 @@ do this from control plane:
 then just follow the docs and corden back from the control plane:
 
 `kubectl uncordon worker-01`
+
+Do the same for other worker nodes as well : )
