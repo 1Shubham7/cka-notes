@@ -21,6 +21,12 @@ There are multiple stratigies to upgrade clusters:
 
 ## Step by step guide 
 
+So for upgrading the entire cluster,
+1. we upgrade the kubeadm version
+2. we upgrade the control plane node kubernetes version
+3. we ugrade the kubelet and kubectl
+4. we upgrade the worker nodes
+
 ### Step 0. First go to spefic doc for the upgrade 
 
 find your cluster version:
@@ -56,7 +62,7 @@ this will tell you the versions you can upgrade to.
 
 ```
 sudo apt-mark unhold kubeadm && \
-sudo apt-get update && sudo apt-get install -y kubeadm='1.29.13-*' && \
+sudo apt-get update && sudo apt-get install -y kubeadm='1.30.9-*' && \
 sudo apt-mark hold kubeadm
 ```
 
@@ -78,4 +84,40 @@ If we only have one control plane node than we can continue to drain that contro
 kubectl drain control-plane --ignore-daemonsets
 `
 
-Then just keep on following the docs : )
+Then just keep on following the docs, you will be ablt to upgrade the kubectl and kubelet and after that when you run `k get nodes` you will get new verison in control plane : )
+
+Then for the worker nodes, go to "Upgrade Linux nodes" link.
+
+### step 6 now upgrade the worked nodes
+
+do the step 0 again:
+
+`k get nodes`
+
+first go to the link as they say and find this command:
+
+`pager /etc/apt/sources.list.d/kubernetes.list`
+
+then change the version there to the desired version:
+
+`sudo vim /etc/apt/sources.list.d/kubernetes.list` (don't forget sudo otherwise it will be read only)
+
+### Step 7. 
+
+```
+sudo apt-mark unhold kubeadm && \
+sudo apt-get update && sudo apt-get install -y kubeadm='1.30.9-*' && \
+sudo apt-mark hold kubeadm
+```
+
+then do:
+
+`sudo kubeadm upgrade node`
+
+do this from control plane:
+
+`kubectl drain worker-01 --ignore-daemonsets`
+
+then just follow the docs and corden back from the control plane:
+
+`kubectl uncordon worker-01`
