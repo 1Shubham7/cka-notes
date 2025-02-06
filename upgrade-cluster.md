@@ -18,25 +18,62 @@ There are multiple stratigies to upgrade clusters:
 2. rolling update
 3. blue green approach: create new worker nodes with upgraded version and connect them to control plane and delete prev nodes
 
-### Step 1. check your OS. 
+
+## Step by step guide 
+
+### Step 0. First go to spefic doc for the upgrade 
+
+find your cluster version:
+
+`k get nodes`
+
+then go to the specifc doc for the version you want and you will find in that doc a link, first go to the link as they say and find this command:
+
+`pager /etc/apt/sources.list.d/kubernetes.list`
+
+then change the version there to the desired version:
+
+`sudo vim /etc/apt/sources.list.d/kubernetes.list` (don't forget sudo otherwise it will be read only)
+
+### Step 1. We will first upgrade kubeadm 
+
+For that go back to the main cluster upgrade doc and First check your OS:
 
 `cat etc/os-release` and you will find your OS. mine was ubuntu
 
 ### Step 2. Go to docs you will find this command:
+
+find the possible kubeadm versions (always run sudo apt update, never skip, even if it comes twice)
 
 ```
 sudo apt update
 sudo apt-cache madison kubeadm
 ```
 
-this will tell you the versions you can upgrade to. also verify with this:
+this will tell you the versions you can upgrade to. 
 
-`sudo kubeadm upgrade plan`
-
-Step 3. Upgrade Kubeadm:
+### Step 3. Upgrade Kubeadm:
 
 ```
 sudo apt-mark unhold kubeadm && \
 sudo apt-get update && sudo apt-get install -y kubeadm='1.29.13-*' && \
 sudo apt-mark hold kubeadm
 ```
+
+Now get a plan for your kubernetes cluster upgrade:
+
+`sudo kubeadm upgrade plan`
+
+### Step 4. Then upgrade the cluster:
+
+`sudo  kubeadm upgrade apply v1.30.9`
+
+and your version will be upgraded, this means the control plane components have been upgraded but the `k get nodes` will not show it because it shows the kubectl version.
+
+### Step 5. Now upgrade the kubelet and kubectl
+
+If we only have one control plane node than we can continue to drain that control plane node:
+
+`
+kubectl drain control-plane --ignore-daemonsets
+`
