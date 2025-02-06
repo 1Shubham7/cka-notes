@@ -77,3 +77,5 @@ If we only have one control plane node than we can continue to drain that contro
 `
 kubectl drain control-plane --ignore-daemonsets
 `
+
+Then just keep on following the docs : )
