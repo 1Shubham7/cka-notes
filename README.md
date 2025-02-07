@@ -95,6 +95,12 @@ Also in exam, for alias and autocompleting tags, just go to cheetsheet and the f
 
 for setting alias in exam just use `alias 'k=kubectl'` in shell. also you can't set alias like `alias g='get'`, only stuff like `alias kg=kubectl get`
 
+### crictl
+
+just search crictl commands if you need any.
+
+`crictl pods`
+
 ## Tips:
 
 1. Metadata.Name should not have capital letters, so loadBalancer -> load-balancer
