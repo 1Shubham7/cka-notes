@@ -22,6 +22,6 @@ This will change file permissions:
 
 `service kubelet start`
 
-`journalctl -u kubelet`
+`journalctl -u kubelet` for showing up logs for the kubelet
 
 Shift + G to go to the last line.
