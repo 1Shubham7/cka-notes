@@ -15,3 +15,5 @@ This will change file permissions:
 7	rwx Full permissions
 
 `k cluster-info` gives you info about the cluster
+
+`sudo su -` to become root user
