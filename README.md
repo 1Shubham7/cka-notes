@@ -189,7 +189,7 @@ to rename as well as to move file - `mv`
 - [ ] Day 35
 - [ ] Day 36
 - [x] Day 37
-- [ ] Day 38
-- [ ] Day 39
+- [x] Day 38
+- [x] Day 39
 - [ ] Day 40
 
