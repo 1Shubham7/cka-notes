@@ -16,4 +16,12 @@ This will change file permissions:
 
 `k cluster-info` gives you info about the cluster
 
-`sudo su -` to become root user
+`sudo su -` to become root user. and then `exit` to exit.
+
+`service kubelet status` for kubelete running or not.
+
+`service kubelet start`
+
+`journalctl -u kubelet`
+
+Shift + G to go to the last line.
