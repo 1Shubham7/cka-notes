@@ -25,3 +25,12 @@ This will change file permissions:
 `journalctl -u kubelet` for showing up logs for the kubelet
 
 Shift + G to go to the last line.
+
+
+## JSONPATH
+
+`k get pod -o=jsonpath='{.items[0].metadata.labels}{"\n"}'`
+
+When using custom cols, do not specify items:
+
+`k get pods -o='custom-columns=Good:{.status.hostIPs[0].ip}'`
