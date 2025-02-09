@@ -8,3 +8,4 @@
 
 `k get pod --selector env=dev --no-headers | wc -l`
 
+To install Metrics server add this in args : `--kubelet-insecure-tls`
