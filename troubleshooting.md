@@ -34,3 +34,9 @@ Shift + G to go to the last line.
 When using custom cols, do not specify items:
 
 `k get pods -o='custom-columns=Good:{.status.hostIPs[0].ip}'`
+
+Having multiple headers are like this:
+
+`k get pods -o='custom-columns=Good:{.status.hostIPs[0].ip},Kind:{.kind}'`
+
+// IMP: you will also find imp commands for this in the kubectl cheatsheet, remeber this
