@@ -193,3 +193,7 @@ to rename as well as to move file - `mv`
 - [x] Day 39
 - [ ] Day 40
 
+## KodeKloud
+
+[ ] static pods
+
