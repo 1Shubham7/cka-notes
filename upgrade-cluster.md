@@ -22,10 +22,12 @@ There are multiple stratigies to upgrade clusters:
 ## Step by step guide 
 
 So for upgrading the entire cluster,
-1. we upgrade the kubeadm version
-2. we upgrade the control plane node kubernetes version
-3. we ugrade the kubelet and kubectl
-4. we upgrade the worker nodes
+
+1. change the kubernetes.list file version
+2. we upgrade the kubeadm version
+3. we upgrade the control plane node kubernetes version
+4. we ugrade the kubelet and kubectl
+5. we upgrade the worker nodes
 
 ### Step 0. First go to spefic doc for the upgrade 
 
