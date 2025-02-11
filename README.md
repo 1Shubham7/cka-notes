@@ -195,5 +195,6 @@ to rename as well as to move file - `mv`
 
 ## KodeKloud
 
-[ ] static pods
+- [ ] static pods
+- [ ] Explore Environment
 
