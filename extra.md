@@ -11,3 +11,5 @@
 To install Metrics server add this in args : `--kubelet-insecure-tls`
 
 How many cluster are present: `k config get-contexts`
+
+Mac address of node - `ip link show` and the mac address will be under eth0
