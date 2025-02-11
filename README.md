@@ -197,4 +197,5 @@ to rename as well as to move file - `mv`
 
 - [ ] static pods
 - [ ] Explore Environment
+- [ ] Install a Kubernetes Cluster using kubeadm
 
