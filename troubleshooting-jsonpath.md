@@ -39,4 +39,10 @@ Having multiple headers are like this:
 
 `k get pods -o='custom-columns=Good:{.status.hostIPs[0].ip},Kind:{.kind}'`
 
+`?` is used for condition and `@` is used for "each item in the list". `*` is for all.
+
+- `first 2 elements of a list` : [0:8] , the rule is `[start: end-1: step]`
+
+![image](https://github.com/user-attachments/assets/9456e634-b13a-45d9-8f96-7b32b5d2ff80)
+
 // IMP: you will also find imp commands for this in the kubectl cheatsheet, remeber this
