@@ -42,6 +42,8 @@ Having multiple headers are like this:
 `?` is used for condition and `@` is used for "each item in the list". `*` is for all.
 
 - `first 2 elements of a list` : [0:8] , the rule is `[start: end-1: step]`
+- `last element of the list` : [-1] pr [-1,0]
+- {"\n"} is for new line {"\t"} is for tab
 
 ![image](https://github.com/user-attachments/assets/9456e634-b13a-45d9-8f96-7b32b5d2ff80)
 
