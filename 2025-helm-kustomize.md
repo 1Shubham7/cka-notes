@@ -67,5 +67,12 @@ images:
   name: [OLD IMAGE] #don't confuse it will container name. 
   newName: [NEW IMAGE] 
 ```
+or we can also change the image tag
 
+```yaml
+images:
+  name: [OLD IMAGE] 
+  newTag: [Tag e.g. "1.24"] 
+```
 
+this will change nginx -> nginx:1.24
