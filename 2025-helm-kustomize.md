@@ -46,7 +46,7 @@ Transformers: these are used to add some stuff to all the imported configs by ku
 
 e.g.:
 ```yaml
-commonLabels:
+labels:
   abc: xyz
 
 namespace: dev
@@ -64,15 +64,33 @@ Other than these we also have image transformer, it will change the image of all
 
 ```yaml
 images:
-  name: [OLD IMAGE] #don't confuse it will container name. 
-  newName: [NEW IMAGE] 
+  - name: [OLD IMAGE] #don't confuse it will container name. 
+    newName: [NEW IMAGE] 
 ```
 or we can also change the image tag
 
 ```yaml
 images:
-  name: [OLD IMAGE] 
+  name: [OLD IMAGE]
+  newName: [NEW IMAGE]
   newTag: [Tag e.g. "1.24"] 
 ```
 
 this will change nginx -> nginx:1.24
+
+Other that transformers, we also have Patches that are much more surgical. for this we need:
+1. **Operation**: add, remove, replace
+2. **Target**
+3. **Value:** for add or replace
+
+And patching is of two types - inline and seperate file (which is also present in k8s docs)
+
+1. Inline:
+
+![image](https://github.com/user-attachments/assets/99d838d0-0e22-4766-921d-8c93f17edb6a)
+
+Target means we will apply this to all the objects that have those configurations.
+
+2. Seperate file:
+
+![image](https://github.com/user-attachments/assets/057365e3-3848-4071-94cd-cb96909e3037)
