@@ -24,8 +24,48 @@ To install helm: `sudo snap install helm --classic`
 
 ![image](https://github.com/user-attachments/assets/1be178d8-768b-47eb-a6fe-73269f730d17)
 
+![image](https://github.com/user-attachments/assets/b518c413-c1de-46d0-9032-29c678857890)
+
 so we need to create the kustomize.yaml file in the folder. and then we need to `kustomize build k8s/`, this will give us the final config.
 - to apply the config as well: `kustomize build k8s/ | kubectl apply -f -`
+- to delete stuff from kustomize: `kustomize build k8s/ | kubectl delete -f -`
+- if you want to do it using kubectl only, then `kubectl apply -k k8s/` or replace apply by delete.
 
-![image](https://github.com/user-attachments/assets/b518c413-c1de-46d0-9032-29c678857890)
+if we have a lot of folders to work with, we don't want to go inside each dir and apply configs, for that we can use kustomize:
+![image](https://github.com/user-attachments/assets/688dc0c6-4677-410d-b492-6796098b413e)
+
+now we can simply do `kustomize build k8s/ | kubectl apply -f -`
+
+And when we have more folders and our kustomize.yaml looks very lengthy, we can simple create kustomize for each dir :
+
+![image](https://github.com/user-attachments/assets/3608d60d-5534-4095-8f1f-6666b4e5e490)
+
+Transformers: these are used to add some stuff to all the imported configs by kustomize.
+
+![image](https://github.com/user-attachments/assets/476074f4-620a-429e-95cb-506a7f127020)
+
+e.g.:
+```yaml
+commonLabels:
+  abc: xyz
+
+namespace: dev
+
+namePrefix: abc
+nameSuffix: -dev
+
+commonAnnotations:
+  abc: xyz
+```
+
+Other than these we also have image transformer, it will change the image of all the containers with the name nginx:
+
+![image](https://github.com/user-attachments/assets/2fa93359-32e0-43e6-a0df-2371aca47893)
+
+```yaml
+images:
+  name: [OLD IMAGE] #don't confuse it will container name. 
+  newName: [NEW IMAGE] 
+```
+
 
