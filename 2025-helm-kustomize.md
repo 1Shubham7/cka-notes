@@ -18,3 +18,14 @@ To install helm: `sudo snap install helm --classic`
 ![image](https://github.com/user-attachments/assets/65810fa2-61c4-47b6-b5a8-6576f0bac018)
 
 ![image](https://github.com/user-attachments/assets/7a4f91c9-c6b9-4261-8168-93fc005ef3cb)
+
+
+## Kustomize
+
+![image](https://github.com/user-attachments/assets/1be178d8-768b-47eb-a6fe-73269f730d17)
+
+so we need to create the kustomize.yaml file in the folder. and then we need to `kustomize build k8s/`, this will give us the final config.
+- to apply the config as well: `kustomize build k8s/ | kubectl apply -f -`
+
+![image](https://github.com/user-attachments/assets/b518c413-c1de-46d0-9032-29c678857890)
+
