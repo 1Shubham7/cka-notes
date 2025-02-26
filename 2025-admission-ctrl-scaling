@@ -1,0 +1,11 @@
+## Admission Controllers
+
+to add a default admission controller: 
+just go to kube-apiserver.yaml and add it in `- --enable-admission-plugins=NodeRestriction` and to disable any admission controller, add this: `- --disable-admission-plugins=DefaultStorageClass`
+
+- to see all the current admission controllers:
+
+`kubectl exec -it kube-apiserver-controlplane -n kube-system -- kube-apiserver -h | grep enable-admission-plugins`
+
+## Autoscalling
+
