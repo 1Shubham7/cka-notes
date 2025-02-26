@@ -91,6 +91,14 @@ And patching is of two types - inline and seperate file (which is also present i
 
 Target means we will apply this to all the objects that have those configurations.
 
+for list, its a bit different:
+
+![image](https://github.com/user-attachments/assets/f5f888be-b3a0-4041-8c34-85a8d1f2a4af)
+
+![image](https://github.com/user-attachments/assets/54df0f23-84f5-46d8-81cf-2d90f121c5ab)
+(- means append at the end)
+
+
 2. Seperate file:
 
 ![image](https://github.com/user-attachments/assets/057365e3-3848-4071-94cd-cb96909e3037)
