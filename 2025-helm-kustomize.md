@@ -106,3 +106,7 @@ for list, its a bit different:
 ### Overlays
 
 ![image](https://github.com/user-attachments/assets/56b4e493-7790-4d6c-9fad-03ceee531412)
+
+### Components
+
+![image](https://github.com/user-attachments/assets/795ff12b-1c05-47fb-8d92-d2c80294f18c)
