@@ -90,6 +90,13 @@ For service accounts this file is very important: `/var/run/secrets/kubernetes.i
 - token: The token (JWT) used for authenticating the Pod with the Kubernetes API.
 - namespace: The namespace in which the Pod is running.
 
+```
+openssl x509 -in <certificate-file> -text -noout
+```
+Learn this command:
+-text → Displays the certificate details in human-readable form.
+-noout → Suppresses the output of the actual certificate.
+
 (more about this in the video)
 
 ## Security Contexts
@@ -97,6 +104,8 @@ For service accounts this file is very important: `/var/run/secrets/kubernetes.i
 security applied in container will override what you apply at pod level. 
 
 ![image](https://github.com/user-attachments/assets/f0f09cfc-df33-4665-8ab5-aad940d5718a)
+
+
 
 [MAC_ADMIN] is a persmission. and that `runAsUser` means all processes inside the container will run as the user with UID 1000 instead of the default root user (UID 0). everything is in docs.
 
