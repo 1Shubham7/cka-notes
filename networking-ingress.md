@@ -1,3 +1,9 @@
+## Networking
+
+
+
+## Ingress
+
 you can expose your application to the outside world using service of type NodePort or LoadBalancer but they are not ideal to serve your application to customers. NodePort is used within org, and load balancer service requires a Load Balancer from the cloud providers.
 
 - An Ingress is an Kubernetes  object that manages external access to services within a cluster, typically HTTP and HTTPS traffic.
