@@ -1,6 +1,21 @@
 ## Networking
 
+- `ip address show type bridge`
 
+This will give us the interface/bridge of that node. `show` means show specific thing, `type bridge` means type is bridge. 
+
+- If you were to ping google from the controlplane node, which route does it take? (What is the IP address of the Default Gateway?)
+
+for this we will do `ip route` :
+
+```
+default via 169.254.1.1 dev eth0 
+169.254.1.1 dev eth0 scope link 
+172.17.0.0/24 dev cni0 proto kernel scope link src 172.17.0.1 
+172.17.1.0/24 via 172.17.1.0 dev flannel.1 onlink
+```
+
+so the default one is 169...
 
 ## Ingress
 
