@@ -32,7 +32,7 @@ nodes:
 
 **You will get access to kubernetes.io/docs and /blogs for CKA**
 
-- To get the apiVersion, `kubectl explain pod`
+- To learn about any k8s resource - `kubectl explain pod`
 - IMP: to get the yaml file:
   `kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml`
 
