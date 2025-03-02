@@ -144,12 +144,6 @@ to rename as well as to move file - `mv`
 
 1. ***Make sure to watch day 10 video 20:00 onwards to know about fully qualified domain name***
 
-// Autoscaling, HPA, VPA all this is very imp but not coming in cka so do study that later :)
-
-
-
-
-
 ## Assignments:
 
 - [x] Day 1
@@ -195,7 +189,4 @@ to rename as well as to move file - `mv`
 
 ## KodeKloud
 
-- [ ] static pods
-- [ ] Explore Environment
-- [ ] Install a Kubernetes Cluster using kubeadm
-
+All practice sessions done : )
